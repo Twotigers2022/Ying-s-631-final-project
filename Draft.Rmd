@@ -1,0 +1,63 @@
+---
+title: "Final_Project _Draft"
+author: "Ying Sun"
+date: "5/3/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Intro
+
+## What
+This project is about US winter Olympic Gold medalists for the past 20 years.
+## Why
+The reason I chose this topic is because winter Olympic just finished this year in Beijing, China. I did see some improvements of Chinese athletes this year, it seems that they won some gold medals that were big challenges for them in the past. I am curious to know how has Team US been doing, for example, some of the winter games Team US have been quite good at 10 years ago, are they still leaders?
+## How
+I  created an excel file which contains data of US Winter Olympics Gold Medalists from year 2002 to year 2022.I found these data from Wikipedia.
+# Body
+My excel file has the following columns:
+```{r}
+names(winter_olympics)
+```
+First, I would like to see how many gold medals did Team US won for the past 20 years?
+```{r}
+table(winter_olympics$`Gold Medal`)
+```
+Second, I would like to compare women vs. men who won more medals overall and compare the ratios.
+```{r}
+table(winter_olympics$WOMEN)
+```
+```{r}
+table(winter_olympics$MEN)
+```
+```{r}
+table(winter_olympics$WOMEN)/table(winter_olympics$`Gold Medal`)
+```
+
+```{r}
+table(winter_olympics$MEN)/table(winter_olympics$`Gold Medal`)
+```
+
+
+Challenges: 1). I would like to see which sports Team US won the most medals, but I don't know how to show this. 2). I also want to show which year US won the most/least medals, I tried the command below, but it only showed integer(0):
+```{r}
+ X <- (winter_olympics$WOMEN+winter_olympics$MEN)
+which.max(X)
+```
+
+# Topics From Class
+
+## Topic 1:
+R Markdown-I really like how many functions R Markdown has offered. We can easily convert the files to word, pdf and html by using Knit. We can also insert R commands in between our texts and run it by single sentence or run the whole commands.  
+## Topic 2:
+Github-we can push R Markdown files on Github, share a link, and others can read our files. 
+## Topic 3:
+Probability-I will use probability calculations several times for my project, we have used these calculations for our chapter 3 homework.
+## Topic 4:
+Barplots-a common way to display a single categorical variable, this will be a good visualization for my project.
+## Topic 5:
+Histograms-convenient for describing the shape of the data distribution.
+# Conclusion
+The data proves my initial hypothesis: 1).Men won more gold medals in winter Olympic than women.
