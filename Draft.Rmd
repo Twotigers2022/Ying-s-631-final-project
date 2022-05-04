@@ -17,6 +17,8 @@ The reason I chose this topic is because winter Olympic just finished this year 
 ## How
 I  created an excel file which contains data of US Winter Olympics Gold Medalists from year 2002 to year 2022.I found these data from Wikipedia.
 # Body
+
+
 My excel file has the following columns:
 ```{r}
 names(winter_olympics)
@@ -61,3 +63,4 @@ Barplots-a common way to display a single categorical variable, this will be a g
 Histograms-convenient for describing the shape of the data distribution.
 # Conclusion
 The data proves my initial hypothesis: 1).Men won more gold medals in winter Olympic than women.
+by doing this project, I have used some of the knowledge we discussed during class: probability calculation, publish R markdown in Github, there are still some parts of this project I need to figure out why the commands didn't work. I talked in the challenge section. Hopefully I can figure them out in the end.
