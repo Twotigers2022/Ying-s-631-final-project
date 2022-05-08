@@ -22,13 +22,18 @@ I  created an excel file which contains data of US Winter Olympics Gold Medalist
 
 My excel file has the following columns:
 ```{r}
+library(readxl)
+winter_olympics <- read_excel("C:/Users/vicky/Downloads/Ying-s-631-final-p/winter olympics.xlsx")
+```
+
+```{r}
 names(winter_olympics)
 ```
-First, I would like to see how many gold medals did Team US won for the past 20 years?
+1. I would like to see how many gold medals did Team US won for the past 20 years?
 ```{r}
 table(winter_olympics$`Gold Medal`)
 ```
-Second, I would like to compare women vs. men who won more medals overall and compare the ratios.
+2.  I would like to compare women vs. men who won more medals overall and compare the ratios.
 ```{r}
 table(winter_olympics$WOMEN)
 ```
@@ -42,26 +47,68 @@ table(winter_olympics$WOMEN)/table(winter_olympics$`Gold Medal`)
 ```{r}
 table(winter_olympics$MEN)/table(winter_olympics$`Gold Medal`)
 ```
+As we can see the above calculations, overall, men won more gold medals than women for the past 20 years in winter Olympics.
 
-
-Challenges: 1). I would like to see which sports Team US won the most medals, but I don't know how to show this. 2). I also want to show which year US won the most/least medals, I tried the command below, but it only showed integer(0):
+3.  I want to create plot to see the YEAR versus gold medals
 ```{r}
- X <- (winter_olympics$WOMEN+winter_olympics$MEN)
-which.max(X)
+plot(winter_olympics$YEAR, winter_olympics$`Gold Medal`)
+
 ```
+4. I want to find out which year did TEAM US won the most Gold Medals in Winter Olympics?
+```{r}
+
+```
+```{r}
+barplot(table(winter_olympics$MEN))
+```
+```{r}
+barplot(table(winter_olympics$WOMEN))
+```
+```{r}
+gender_sport <- table(winter_olympics$GENDER, winter_olympics$YEAR)
+mosaicplot(gender_sport)
+```
+
+```{r}
+boxplot(winter_olympics$YEAR ~ winter_olympics$GENDER)
+```
+```{r}
+boxplot(winter_olympics$`Gold Medal` ~ winter_olympics$GENDER)
+```
+```{r}
+hist(winter_olympics$`Gold Medal`)
+```
+
+
+5.  I would like to see which sports Team US won the most medals,I will use tidyverse to demonstrate this.
+
+```{r}
+library(tidyverse)
+winter_olympics%>% group_by(SPORT)%>% summarise(n=n())
+```
+As we can see from the above, Team US won the most gold medals in Snowboarding with 18 gold medals in total.
+
+```
+
+
 
 # Topics From Class
 
 ## Topic 1:
-R Markdown-I really like how many functions R Markdown has offered. We can easily convert the files to word, pdf and html by using Knit. We can also insert R commands in between our texts and run it by single sentence or run the whole commands.  
+R Markdown-I really like how many functions R Markdown has offered. We can easily convert the files to word, pdf and html by using Knit. We can also insert R commands in between our texts and run it by single sentence or run the whole commands.
+
 ## Topic 2:
 Github-we can push R Markdown files on Github, share a link, and others can read our files. 
+
 ## Topic 3:
 Probability-I will use probability calculations several times for my project, we have used these calculations for our chapter 3 homework.
+
 ## Topic 4:
 Barplots-a common way to display a single categorical variable, this will be a good visualization for my project.
+
 ## Topic 5:
 Histograms-convenient for describing the shape of the data distribution.
+
 # Conclusion
 The data proves my initial hypothesis: 1).Men won more gold medals in winter Olympic than women.
 by doing this project, I have used some of the knowledge we discussed during class: probability calculation, publish R markdown in Github, there are still some parts of this project I need to figure out why the commands didn't work. I talked in the challenge section. Hopefully I can figure them out in the end.
