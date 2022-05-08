@@ -33,6 +33,8 @@ names(winter_olympics)
 ```{r}
 table(winter_olympics$`Gold Medal`)
 ```
+There are total of 54 gold medals Team Us won in the past 20 years.
+
 2.  I would like to compare women vs. men who won more medals overall and compare the ratios.
 ```{r}
 table(winter_olympics$WOMEN)
@@ -49,15 +51,14 @@ table(winter_olympics$MEN)/table(winter_olympics$`Gold Medal`)
 ```
 As we can see the above calculations, overall, men won more gold medals than women for the past 20 years in winter Olympics.
 
-3.  I want to create plot to see the YEAR versus gold medals
+3. I want to find out which year did TEAM US won the most Gold Medals in Winter Olympics?
 ```{r}
-plot(winter_olympics$YEAR, winter_olympics$`Gold Medal`)
-
+aggregate(`Gold Medal` ~ YEAR, data=winter_olympics, FUN=sum)
 ```
-4. I want to find out which year did TEAM US won the most Gold Medals in Winter Olympics?
-```{r}
+As we can tell that Team US won the most gold medals in year 2002 winter olympics with a total of 10. 
+Year 2022 Team US won least gold medals, with a total of 8. 
 
-```
+4. below are some bar plots I use to further represent the portion of women vs. men in winter olympics.
 ```{r}
 barplot(table(winter_olympics$MEN))
 ```
@@ -68,7 +69,7 @@ barplot(table(winter_olympics$WOMEN))
 gender_sport <- table(winter_olympics$GENDER, winter_olympics$YEAR)
 mosaicplot(gender_sport)
 ```
-
+5. below are the box plots of showing gender portion of different Olympic games
 ```{r}
 boxplot(winter_olympics$YEAR ~ winter_olympics$GENDER)
 ```
@@ -80,7 +81,7 @@ hist(winter_olympics$`Gold Medal`)
 ```
 
 
-5.  I would like to see which sports Team US won the most medals,I will use tidyverse to demonstrate this.
+6.  I would like to see which sports Team US won the most medals,I will use tidyverse to demonstrate this.
 
 ```{r}
 library(tidyverse)
@@ -101,14 +102,13 @@ R Markdown-I really like how many functions R Markdown has offered. We can easil
 Github-we can push R Markdown files on Github, share a link, and others can read our files. 
 
 ## Topic 3:
-Probability-I will use probability calculations several times for my project, we have used these calculations for our chapter 3 homework.
+Probability-I used probability calculation for my project to show women and men's ratio in winter olympic games.  
 
 ## Topic 4:
-Barplots-a common way to display a single categorical variable, this will be a good visualization for my project.
+Tidyservice-I used tidyservice to show which sport Team USA won the most gold medals in winter olympics, because the column sport are not numbers, they are strings, I couldn't get it to work in the basic R, tidyservice has the functions to group strings. 
 
 ## Topic 5:
-Histograms-convenient for describing the shape of the data distribution.
+table command-I used this command to show a summary of how many men or women won the onlympic gold medals. 
 
 # Conclusion
-The data proves my initial hypothesis: 1).Men won more gold medals in winter Olympic than women.
-by doing this project, I have used some of the knowledge we discussed during class: probability calculation, publish R markdown in Github, there are still some parts of this project I need to figure out why the commands didn't work. I talked in the challenge section. Hopefully I can figure them out in the end.
+This final project helps me review some of the knowleges or commands we learned in class and assignments, such as R markdown, Tidyservice, probability, barplots, mosiacplot, etc.  I think this is a good way to put what we learned into practices.
