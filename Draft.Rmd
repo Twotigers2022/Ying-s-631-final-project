@@ -7,7 +7,7 @@ output: pdf_document
 
 
 # Intro
-The Winter Olympic Game is a major international multi-sport event held once every four years for soprts practiced on snow and ice.
+The Winter Olympic Game is a major international multi-sport event held once every four years for sports practiced on snow and ice.
 
 ## What
 This is just simple project about US winter Olympic Gold medalists for the past 20 years.
