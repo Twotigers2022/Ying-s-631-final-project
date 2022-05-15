@@ -1,7 +1,7 @@
 # Intro
 
 The Winter Olympic Game is a major international multi-sport event held
-once every four years for soprts practiced on snow and ice.
+once every four years for sports practiced on snow and ice.
 
 ## What
 
@@ -106,7 +106,7 @@ gender winning gold medals in winter olympics in different year.**
     gender_sport <- table(winter_olympics$GENDER, winter_olympics$YEAR)
     mosaicplot(gender_sport, border ="brown", col="#69b3a2")
 
-![](README_files/figure-markdown_strict/unnamed-chunk-94-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 **As the mosaicplot shows women won more gold medals in year 2002,2014,
 2018 and 2022.**
@@ -116,11 +116,11 @@ Olympic games**
 
     boxplot(winter_olympics$YEAR ~ winter_olympics$GENDER, border= "purple", col="pink")
 
-![](README_files/figure-markdown_strict/unnamed-chunk-95-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
     boxplot(winter_olympics$`Gold Medal` ~ winter_olympics$GENDER, border="purple", col="pink")
 
-![](README_files/figure-markdown_strict/unnamed-chunk-96-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 1.  Below is the the histogram showing the Frequency of each year of
     Olympic games.
@@ -129,7 +129,7 @@ Olympic games**
 
     hist(winter_olympics$YEAR, density=c(5,10,20,30,7) , angle=c(0,45,90,11,36) , col="brown")
 
-![](README_files/figure-markdown_strict/unnamed-chunk-97-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
     table(winter_olympics$YEAR)
 
